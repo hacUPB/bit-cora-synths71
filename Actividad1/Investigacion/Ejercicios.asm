@@ -29,3 +29,9 @@
  D=D+A
  @2
  M=D
+
+ Ejercicios con 0
+ @100
+ D=A
+ @3
+ D=M-D
