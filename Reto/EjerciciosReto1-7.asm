@@ -32,5 +32,10 @@ D=D+A
 @2
 M=D
 
-//6. Si el valor almacenado en D es igual a 0 salta a la posición 100 de la ROM
+//6. Si el valor almacenado en D es igual a 0 salta a la posición 100 de la ROM.
 @100
+D;JEQ
+
+//7. Si el valor almacenado en la posición 100 de la RAM es menor a 100 salta a la posición 20 de la ROM.
+
+
