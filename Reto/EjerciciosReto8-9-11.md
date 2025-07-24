@@ -17,6 +17,10 @@ M=M+1
 
 Esto funciona porque con la segunda instrucción directamente incrementa el valor que hay en esa dirección entonces no hay necesidad de usar D.
 
+11. 
+
+1) 
+
  
 
 
