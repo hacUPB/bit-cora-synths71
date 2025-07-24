@@ -16,6 +16,13 @@ D=D+A
 M=D
 
 //13. Implementa en ensamblador: 
+@0
+D=M
+@1
+D;JGE
+M=M-1
+
+
 
 
 
