@@ -25,7 +25,7 @@ Esto funciona porque con la segunda instrucción directamente incrementa el valo
 
 3) Están en la ROM , y están en las primeras posiciones: por ejemplo, @1000 puede estar en ROM0, y D=A en ROM1.
 
-4) 
+4) La primera instrucción es @1000 y Está en la ROM, que es donde se cargan las instrucciones del programa Y está en ROM0.
 
 5) CONT y LOOP son etiquetas que se usan como puntos de salto en el programa. LOOP marca el inicio del ciclo mientras que CONT es donde se salta cuando la condición i == 0 se cumple.
 

@@ -59,6 +59,17 @@ D=D-A
 @69
 D;JEQ      
 
+//19. Implementa un programa en lenguaje ensamblador que dibuje el bitmap que diseñaste en la pantalla solo si se presiona la tecla “d”.
+    @KBD        
+    D=M         
+    @100        
+    D=D-A       
+    @SKIPDRAW   
+    D;JNE
+    
+    //Aquí deberia estar el codigo del dibujo.       
+
+
 
 
 
