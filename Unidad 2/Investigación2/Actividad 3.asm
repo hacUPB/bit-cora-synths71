@@ -4,10 +4,9 @@
     @100
     D=D-A
     @DRAW
-    D;JEQ        // If KBD == 100 (key 'd'), go to DRAW
-
+    D;JEQ        // Si KBD == 100 (tecla "d") vaya a draw
     @LOOP
-    0;JMP        // Otherwise, do nothing and loop again
+    0;JMP        // Sino, no haga nada
 
 (DRAW)
     @SCREEN
@@ -308,5 +307,11 @@
 	@R13
 	A=M
 	D;JMP
-    @LOOP
-    0;JMP        // Regresa al bucle principal
+	
+    
+(CLEAR)
+		@SCREEN
+		M=0
+		@LOOP
+    	0;JMP        // Regresa al bucle principal
+
