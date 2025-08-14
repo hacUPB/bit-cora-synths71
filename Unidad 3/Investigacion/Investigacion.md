@@ -6,3 +6,4 @@ Se crea una esfera en la pantalla que sale al ejecutar el programa, de color bla
 
 (1) ¿Qué fue lo que incluimos en el archivo .h?
 
+fd
