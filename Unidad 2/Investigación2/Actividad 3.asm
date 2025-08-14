@@ -1,15 +1,23 @@
-(LOOP)
-    @KBD
-    D=M
-    @100
-    D=D-A
-    @DRAW
-    D;JEQ        // Si KBD == 100 (tecla "d") vaya a draw
-    @LOOP
-    0;JMP        // Sino, no haga nada
+(WAITD)
+	@KBD
+	D=M
+	@100
+	D=D-A
+	@DRAW
+	D;JEQ
+	@CLEAR
+	0;JMP
+	
+
+   
+
+
 
 (DRAW)
-    @SCREEN
+	
+	// put bitmap location value in R12
+	// put code return address in R13
+	@SCREEN
 	D=A
 	@R12
 	AD=D+M
@@ -307,11 +315,43 @@
 	@R13
 	A=M
 	D;JMP
-	
+
+	@WAITD
+	0;JMP
+
+    (CLEAR)
+	@8192
+    D=A
+    @R0
+    M=D 
+    @count
+    M=D
+
+    @SCREEN
+    D=A
+    @R1
+    M=D
+    D=M
+    @j
+    M=D 
+
+	(LOOP)
+    @count
+    D=M
+    @WAITD
+    D;JEQ
+
+    @j
+    A=M
+    M=0
+
+    @j
+    M=M+1 
+    @count
+    M=M-1 
     
-(CLEAR)
-		@SCREEN
-		M=0
-		@LOOP
-    	0;JMP        // Regresa al bucle principal
+    @LOOP
+    0;JMP
+	@WAITD
+	0;JMP
 
