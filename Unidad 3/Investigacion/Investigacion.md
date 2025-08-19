@@ -48,5 +48,33 @@ La función mousePressed(int x, int y, int button) se activa cuando se hace clic
 
 En vez de cambiar solo el color cuando se hace clic con el mouse, ahora vamos a hacer que también se cambie el tamaño del círculo al azar. Para esto, vamos a usar una variable que ya tenemos (como ejemplo, el color), y la vamos a usar de forma creativa para simular un cambio sin agregar nuevas variables.
 
+- (Resultado) 
+
+Con este cambio, cada vez que se hace clic, el programa genera un nuevo color aleatorio y también un nuevo tamaño aleatorio para los círculos. En vez de agregar una nueva variable para el tamaño, reutilizamos el canal alfa del color (a) para almacenar el radio. Esto demuestra cómo se puede experimentar sin agregar variables nuevas, solo modificando el comportamiento de las que ya existen.
+
+4. Actividad 4: 
+
+Ver videos
+
+5. Actividad 5: 
+
+(1) ¿Cuál es la definición de un puntero?
+
+
+
+(2) ¿Dónde está el puntero?
+
+
+
+(3) ¿Cómo se inicializa el puntero?
+
+
+
+(4) ¿Para qué se está usando el puntero?
+
+
+
+(5) ¿Qué es exactamente lo que está almacenado en el puntero?
+
 
 
