@@ -6,4 +6,47 @@ Se crea una esfera en la pantalla que sale al ejecutar el programa, de color bla
 
 (1) ¿Qué fue lo que incluimos en el archivo .h?
 
-fd
+Se definieron en la clase ofApp las funciones del setup, update y draw. 2 funciones que sirven para el mouse y otras 2 para las posiciones de las esferas y el de el color de las esferas.
+
+(2) ¿Cómo funciona la aplicación?
+
+Cada vez que mueves el mouse, se guarda su posición y se dibuja un círculo ahí; cuando haces clic, cambia el color de esos círculos. No se mueven las esferas, solo se van creando nuevas en cada posición del mouse.
+
+(3) ¿Qué hace la función mouseMoved?
+
+Agrega una nueva posición del mouse al vector de partículas y elimina la más antigua si ya hay más de 100.
+
+(4) ¿Qué hace la función mousePressed?
+
+Cambia el color de las partículas a uno aleatorio cada vez que haces clic.
+
+(5) ¿Qué hace la función setup?
+
+Configura el fondo negro y pone el color inicial de las partículas en blanco.
+
+(6) ¿Qué hace la función update?
+
+Actualmente no hace nada, pero es donde se pondría lógica que se actualiza cada frame.
+
+(7) ¿Qué hace la función draw?
+
+Dibuja un círculo de color en cada una de las posiciones guardadas en el vector de partículas.
+
+3. Actividad 3: 
+
+La función setup() se ejecuta al inicio del programa y se encarga de configurar el fondo de la ventana en negro (ofBackground(0)) y establecer el color inicial de las partículas como blanco (particleColor = ofColor::white).
+
+La función update() en este caso no realiza ninguna acción, pero se ejecuta constantemente en cada frame y sirve normalmente para actualizar lógica o animaciones, si existieran.
+
+La función draw() es la que se encarga de dibujar en la ventana. Recorre todas las posiciones almacenadas en el vector particles, y para cada una de ellas establece el color actual con ofSetColor(particleColor) y luego dibuja un círculo de radio 50 en esa posición usando ofDrawCircle(pos.x, pos.y, 50).
+
+La función mouseMoved(int x, int y) se ejecuta cada vez que se mueve el mouse dentro de la ventana. Guarda la posición actual del puntero como un nuevo vector ofVec2f(x, y) y lo agrega al final del vector particles. Si hay más de 100 partículas, elimina la más antigua usando particles.erase(particles.begin()), para que la lista no crezca indefinidamente.
+
+La función mousePressed(int x, int y, int button) se activa cuando se hace clic dentro de la ventana, y cambia el color de las partículas a uno aleatorio. Lo hace generando valores aleatorios entre 0 y 255 para rojo, verde y azul usando ofRandom(255).
+
+- (Experimento) 
+
+En vez de cambiar solo el color cuando se hace clic con el mouse, ahora vamos a hacer que también se cambie el tamaño del círculo al azar. Para esto, vamos a usar una variable que ya tenemos (como ejemplo, el color), y la vamos a usar de forma creativa para simular un cambio sin agregar nuevas variables.
+
+
+
