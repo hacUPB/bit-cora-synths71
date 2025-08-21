@@ -4,6 +4,8 @@ Se crea una esfera en la pantalla que sale al ejecutar el programa, de color bla
 
 2. Actividad 2:
 
+<video controls src="../Evidencias/Actividad 2.mp4" title="Title"></video>
+
 (1) ¿Qué fue lo que incluimos en el archivo .h?
 
 Se definieron en la clase ofApp las funciones del setup, update y draw. 2 funciones que sirven para el mouse y otras 2 para las posiciones de las esferas y el de el color de las esferas.
@@ -78,17 +80,25 @@ Se usa para manejar dinámicamente las esferas y permitir seleccionar una en esp
 
 El puntero almacena la dirección de memoria donde está guardado el objeto Sphere.
 
+<video controls src="../Evidencias/Actividad 5.mp4" title="Title"></video>
+
 6. Actividad 6:
 
 El problema del codigo es que la esfera se mantiene pegada al puntero del mouse, Entonces una vez se hace clic en una esfera, se queda pegada al mouse constantemente.
 
 Hay que agregar un método mouseReleased en la clase ofApp.cpp y allí poner selectedSphere = nullptr;. Con esto cuando se hace clic, la esfera deja de seguir al mouse.
 
+<video controls src="Actividad 6 .mp4" title="Title"></video>
+
 7. Actividad 7:
 
-(1) Cuando presionás “c”, se crea una esfera local en el stack y se guarda su dirección en el vector, pero cuando sale de la función la esfera desaparece, dejando un puntero inválido en globalVector.
+(1) ¿Qué sucede cuando presionas la tecla “c”?
 
-(2) 
+Cuando presionás “c”, se crea una esfera local en el stack y se guarda su dirección en el vector, pero cuando sale de la función la esfera desaparece, dejando un puntero inválido en globalVector.
+
+![alt text](<../Evidencias/Captura de pantalla 2025-08-21 092516.png>)
+
+[2]
 
 - ¿Qué sucede cuando presionas la tecla “c”?
 
@@ -97,4 +107,8 @@ Cuando presionás la tecla “c”, se crea un nuevo objeto Sphere en el heap co
 - ¿Por qué ocurre esto?
 
 Esto ocurre porque los objetos creados con new en el heap permanecen en memoria hasta que se liberen manualmente con delete. A diferencia de los objetos locales en el stack, que se destruyen automáticamente al salir de la función, los objetos en el heap siguen existiendo y el puntero en el vector apunta a un objeto válido.
+
+![alt text](<../Evidencias/Captura de pantalla 2025-08-21 092925.png>)
+
+
 
