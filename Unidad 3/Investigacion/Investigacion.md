@@ -60,21 +60,41 @@ Ver videos
 
 (1) ¿Cuál es la definición de un puntero?
 
-
+Un puntero es una variable que almacena la dirección de memoria de otra variable u objeto en vez de su valor.
 
 (2) ¿Dónde está el puntero?
 
-
+En el código están en el vector: vector<Sphere*> spheres; y en la variable: Sphere* selectedSphere;.
 
 (3) ¿Cómo se inicializa el puntero?
 
-
+Se inicializa con nullptr en el setup() y también cuando se crean esferas con new Sphere.
 
 (4) ¿Para qué se está usando el puntero?
 
-
+Se usa para manejar dinámicamente las esferas y permitir seleccionar una en específico para moverla.
 
 (5) ¿Qué es exactamente lo que está almacenado en el puntero?
 
+El puntero almacena la dirección de memoria donde está guardado el objeto Sphere.
 
+6. Actividad 6:
+
+El problema del codigo es que la esfera se mantiene pegada al puntero del mouse, Entonces una vez se hace clic en una esfera, se queda pegada al mouse constantemente.
+
+Hay que agregar un método mouseReleased en la clase ofApp.cpp y allí poner selectedSphere = nullptr;. Con esto cuando se hace clic, la esfera deja de seguir al mouse.
+
+7. Actividad 7:
+
+(1) Cuando presionás “c”, se crea una esfera local en el stack y se guarda su dirección en el vector, pero cuando sale de la función la esfera desaparece, dejando un puntero inválido en globalVector.
+
+(2) 
+
+- ¿Qué sucede cuando presionas la tecla “c”?
+
+Cuando presionás la tecla “c”, se crea un nuevo objeto Sphere en el heap con new, y se guarda su dirección en el vector globalVector. Como está en el heap, el objeto no desaparece al salir de la función, entonces sí se mantiene vivo y lo podés dibujar o acceder sin problema.
+
+- ¿Por qué ocurre esto?
+
+Esto ocurre porque los objetos creados con new en el heap permanecen en memoria hasta que se liberen manualmente con delete. A diferencia de los objetos locales en el stack, que se destruyen automáticamente al salir de la función, los objetos en el heap siguen existiendo y el puntero en el vector apunta a un objeto válido.
 
