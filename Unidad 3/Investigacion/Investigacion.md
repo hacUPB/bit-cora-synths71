@@ -88,7 +88,7 @@ El problema del codigo es que la esfera se mantiene pegada al puntero del mouse,
 
 Hay que agregar un método mouseReleased en la clase ofApp.cpp y allí poner selectedSphere = nullptr;. Con esto cuando se hace clic, la esfera deja de seguir al mouse.
 
-<video controls src="Actividad 6 .mp4" title="Title"></video>
+<video controls src="../Evidencias/Actividad 6 .mp4" title="Title"></video>
 
 7. Actividad 7:
 
@@ -109,6 +109,3 @@ Cuando presionás la tecla “c”, se crea un nuevo objeto Sphere en el heap co
 Esto ocurre porque los objetos creados con new en el heap permanecen en memoria hasta que se liberen manualmente con delete. A diferencia de los objetos locales en el stack, que se destruyen automáticamente al salir de la función, los objetos en el heap siguen existiendo y el puntero en el vector apunta a un objeto válido.
 
 ![alt text](<../Evidencias/Captura de pantalla 2025-08-21 092925.png>)
-
-
-
