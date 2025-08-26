@@ -109,3 +109,11 @@ Cuando presionás la tecla “c”, se crea un nuevo objeto Sphere en el heap co
 Esto ocurre porque los objetos creados con new en el heap permanecen en memoria hasta que se liberen manualmente con delete. A diferencia de los objetos locales en el stack, que se destruyen automáticamente al salir de la función, los objetos en el heap siguen existiendo y el puntero en el vector apunta a un objeto válido.
 
 ![alt text](<../Evidencias/Captura de pantalla 2025-08-21 092925.png>)
+
+8. Actividad 8:
+
+<video controls src="../Evidencias/Actividad 8.mp4" title="Title"></video>
+
+- ¿Hay alguna función en el programa que dure durante toda la ejecución del programa?
+
+No hay funciones que duren todo el programa
