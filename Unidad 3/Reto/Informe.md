@@ -28,7 +28,7 @@ Variables globales como sphereSelected o selectedSpherePosition se ubican en el 
 
 3. Documenta
 
-Despues de haber probado el codigo y ejecutado se puede ver lo siguiente:
+Despues de haber probado el codigo y ejecutado varias veces para el experimento se puede ver lo siguiente:
 
 - El stack se usa para variables locales y temporales que solo viven mientras la función está activa. Esto se ve en parámetros y variables como rayStart, rayEnd o las que se declaran en la función generateGrid y en mousePressed.
 
