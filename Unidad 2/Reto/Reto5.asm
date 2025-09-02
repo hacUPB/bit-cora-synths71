@@ -1,0 +1,13 @@
+@10
+D=A
+@VAR
+M=D
+@VAR
+D=A
+@PUNT
+M=D
+@20
+D=A
+@PUNT
+A=M
+M=D
