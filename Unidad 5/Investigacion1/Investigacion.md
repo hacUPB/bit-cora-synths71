@@ -1,4 +1,6 @@
-# Introducción a los Objetos
+# la naturaleza de los objetos en C++
+
+## Introducción a los Objetos
 
 1. **¿Qué representa la clase Particle?**
 
@@ -75,6 +77,65 @@ La clase es una definición general. Describe los atributos y comportamientos co
 
 El objeto, por otro lado, es una instancia individual de la clase. Cada objeto tiene su propia copia de los atributos definidos en la clase y utiliza los métodos de la clase para operar sobre sus propios datos.
 
-# Explorando la memoria
+## Explorando la memoria
 
 ![alt text](<../Evidencias1/Captura de pantalla 2025-09-18 092346.png>)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Ubicación en memoria de datos y métodos
+
+## Análisis de la estructura de una clase
+
+**¿Dónde se almacenan los datos y métodos de una clase en C++ en la memoria? Explica el concepto de vtable y cómo se relaciona con los métodos virtuales.**
+
+Los datos los cuales se les podría conocer como los atributos se guardan dependiendo de en donde se crea el objeto, es decir, si el objeto se guarda en el stack entonces los atributos también se guardaran en el stack, mientras que si se guarda en el heap entonces el objeto y sus atributos se guardaran en el heap pero el puntero se guarda en el stack. Como un ultimo caso con los atributos estáticos no están dentro de la instancia sino que están en una selección global del programa.
+
+Los metodos viven todos en la selección de texto o en cierta sección de codigo del ejecutable, Esto significa que todas las instancias de una clase comparten el mismo bloque de código para sus métodos.
+
+Vtable es una tabla interna que contiene punteros a funciones virtuales y está se genera cuando una clase tiene al menos un metodo virtual, gracias a esto cada instancia de esa clase guarda un puntero oculto a la vtable. Esto permite el polimorfismo a la hora de ejecutarlo los cual es llamar al método correcto dependiendo del tipo real del objeto, incluso si se usa a través de un puntero.
+
+## Exploración de métodos virtuales
+
+**¿Cómo afecta la presencia de métodos virtuales al tamaño del objeto?** 
+
+La presencia de métodos virtuales aumenta el tamaño del objeto porque el compilador le agrega un puntero oculto a la vtable, conocido como vptr, y este se almacena como el primer campo del objeto y este tiene un tamaño dependiendo del sistema osea normalmente es de 4 bytes en sistemas de 32 bits o 8 bytes en 64 bits.
+
+**¿Qué papel juegan las vtables en el polimorfismo?** 
+
+Las vtables son clave para que funcione el polimorfismo lo cual esto ocurre ya que cuando se declara un metodo virtual, el compilador crea una vtable por clase que contenga punteros a las implementaciones de los métodos virtuales e inserta un puntero oculto que sería el vptr en cada objeto que apunta a esa vtable, de esta manera cuando esta en ejecución si se llama un método virtual mediante un puntero o referencia a clase base el programa va a hacer las siguientes cosas: 
+
+- Usa el vptr del objeto para acceder a su vtable.
+
+- Busca el puntero al método correcto según el tipo real del objeto.
+
+- Ejecuta esa versión del método.
+
+**Cómo se implementan los métodos virtuales en C++?**
+
+En C++, los métodos virtuales se implementan usando una estructura interna llamada vtable y un puntero oculto llamado vptr que el compilador agrega automáticamente a los objetos de clases con métodos virtuales.
+
+Cuando se llama un método virtual a través de un puntero o referencia a la clase base, C++ hace lo siguiente en el tiempo de ejecución: 
+
+- Accede al vptr del objeto, el vptr es un puntero oculto. 
+
+- Usa el vptr para acceder a la vtable.
+
+- Busca en la vtable el puntero al método correspondiente.
+
+- Llama a esa función, que puede ser de la clase base o de una clase derivada.
+
+## Uso de punteros y referencias
+
+
