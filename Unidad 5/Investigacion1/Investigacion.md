@@ -2,7 +2,7 @@
 
 ## Introducción a los Objetos
 
-1. **¿Qué representa la clase Particle?**
+**¿Qué representa la clase Particle?**
 
 La clase Particle representa una plantilla o modelo para crear partículas en un programa. Define dos cosas principales:
 
@@ -12,7 +12,7 @@ La clase Particle representa una plantilla o modelo para crear partículas en un
 
 En términos de programación orientada a objetos, Particle encapsula tanto los datos como las acciones que se pueden hacer con esos datos. Se puede ver por asi decirlo como un espacio o plano para construir objetos que se comportan como particulas móviles. 
 
-2. **¿Cómo interactúan sus atributos y métodos?**
+**¿Cómo interactúan sus atributos y métodos?**
 
 Los atributos y métodos de Particle están conectados. Cuando se llama al método move() en un objeto Particle, ese método modifica directamente los atributos internos (x y y) del objeto que lo invoca, el metodo en si es el siguiente:
 
@@ -24,7 +24,7 @@ void move(float dx, float dy) {
 ```
 Esto ocurre gracias al puntero oculto this, que le permite al método acceder a los atributos del objeto específico (en este caso, p1) sobre el que se llamó.
 
-3. **Prompt para ChatGPT: explícame en detalle qué es un objeto en C++ y cómo se relaciona con una clase. Usa el ejemplo de una clase Particle con atributos x y y y un método move.**
+**Prompt para ChatGPT: explícame en detalle qué es un objeto en C++ y cómo se relaciona con una clase. Usa el ejemplo de una clase Particle con atributos x y y y un método move.**
 
 En C++, un objeto es una instancia concreta de una clase. Es decir, cuando defines una clase, no estás creando algo que exista en memoria todavía, solo estás describiendo cómo deberían ser los objetos: qué datos tendrán y qué operaciones podrán hacer, lo siguiente quiere decir entonces:
 
@@ -84,16 +84,6 @@ El objeto, por otro lado, es una instancia individual de la clase. Cada objeto t
 
 
 
-
-
-
-
-
-
-
-
-
-
 # Ubicación en memoria de datos y métodos
 
 ## Análisis de la estructura de una clase
@@ -138,4 +128,4 @@ Cuando se llama un método virtual a través de un puntero o referencia a la cla
 
 ## Uso de punteros y referencias
 
-
+sdds
