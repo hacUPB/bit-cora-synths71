@@ -1,4 +1,4 @@
-# la naturaleza de los objetos en C++
+# Sesión 1: la naturaleza de los objetos en C++
 
 ## Introducción a los Objetos
 
@@ -84,7 +84,7 @@ El objeto, por otro lado, es una instancia individual de la clase. Cada objeto t
 
 
 
-# Ubicación en memoria de datos y métodos
+# Sesión 2: ubicación en memoria de datos y métodos
 
 ## Análisis de la estructura de una clase
 
@@ -128,4 +128,40 @@ Cuando se llama un método virtual a través de un puntero o referencia a la cla
 
 ## Uso de punteros y referencias
 
-sdds
+**Analizar el impacto en memoria**
+
+Cuando se pone un puntero dentro de una función cada instancia de esa clase tiene un campo extra en memoria que ocupa lo que ocupa un puntero y ese puntero no guarda en si la función, sino que guarda la dirección de memoria donde está el código de la función. Con todo esto en cuenta el tamaño de la instancia si aumenta porque ahora cada objeto tiene ese puntero dentro de su estructura.
+
+**Reflexión Guiada**
+
+**¿Cuál es la relación entre los punteros a métodos y la vtable?**
+
+La relación entre punteros a métodos y la vtable es que Los punteros a funciones son independientes, apuntan a funciones globales o estáticas y los punteros a métodos miembro son más complejos, porque necesitan asociarse con un objeto concreto al ser invocados. La vtable como se había mencionado antes es que el compilador la crea automáticamente cuando hay métodos virtuales, esto lo hace en vez de que uno los declare uno mismo para que el mismo compilador lo haga.
+
+**¿Cómo afectan estos mecanismos al rendimiento del programa?** 
+
+Los punteros a funciones y los punteros a métodos miembro requieren de más recursos porque tienen hacer varios procesos que los pueden hacer más lentos que los punteros normales, por otro lado con el vtable puede llegar a ser más eficientes para el rendimiento porque puede parecer pequeña la diferencia pero en la hora de ejecutar se puede notar el cambio.
+
+**¿Qué diferencia hay entre punteros a funciones y punteros a métodos miembro en C++?** 
+
+Un puntero a función es solo la dirección de una función global o estática y un puntero a método miembro guarda información que permite llamar a una función asociada a un objeto específico.
+
+**Reflexión individual** 
+
+**¿Dónde residen los datos y métodos de una clase en la memoria?**
+
+Los datos a los que también se les podría llamar atributos, por lo general se encuentran en el heap o el stack, dependiendo de como se instancie el objeto. Los metodos están en la sección de codigo del programa y no la del objeto.
+
+**¿Cómo interactúan las diferentes partes en tiempo de ejecución?**
+
+El objeto guarda solo sus datos, Los métodos se llaman accediendo a la dirección en la sección de código y si aplica en todo esto un puntero a vtable.
+
+**Conclusión: cómo esta comprensión afecta el diseño de sistemas.** 
+
+Entender cómo se manejan punteros, referencias y vtables permite diseñar sistemas más eficientes, esto porque se evitan usar datos innecesarios que pueden hacer el rendimiento y el gasto de memoria más significativo y además de esto se puede empezar a aprender cuando conviene usar el polimorfismo y cuando los punteros a funciones.
+
+
+
+
+
+
