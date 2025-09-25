@@ -160,6 +160,8 @@ El objeto guarda solo sus datos, Los métodos se llaman accediendo a la direcci�
 
 Entender cómo se manejan punteros, referencias y vtables permite diseñar sistemas más eficientes, esto porque se evitan usar datos innecesarios que pueden hacer el rendimiento y el gasto de memoria más significativo y además de esto se puede empezar a aprender cuando conviene usar el polimorfismo y cuando los punteros a funciones.
 
+33
+
 
 
 
