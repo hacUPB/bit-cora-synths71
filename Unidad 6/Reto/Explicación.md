@@ -20,5 +20,13 @@ Cada planta reacciona a eventos generados por el usuario mediante el teclado, lo
 
 **State:** Cada planta implementa una máquina de estados que define su comportamiento visual y funcional, esto permite encapsular la lógica de cada etapa del crecimiento y facilita la transición entre estados de manera controlada.
 
+# Rae2: 
+
+El codigo presenta varias oportunidades de mejora, en este caso la más notable es que cuando se pone en reposo las plantas, que no desaparezcan las plantas que estaban creciendo y la forma de flor que aparecen al presionar c.
+
+# Video:
+
+
+
 
 
