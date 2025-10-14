@@ -1,0 +1,8 @@
+@10
+D=A
+@VAR
+M=D
+@5
+D=A
+@BIS
+M=D
