@@ -58,6 +58,16 @@ Además de esto, uso el ejemplo 4 ya que puede funcionar como evidencia adiciona
 
 **¿Qué es un uniform?**
 
+Un uniform es una variable especial que se declara dentro de un shader, así como por ejemplo en shader.frag o shader.vert, luego que recibe información enviada desde el programa principal en C++. Esto significa que en cada frame, el shader recibe el tiempo total que ha pasado desde que comenzó el programa, y puede usarlo para animar cosas como movimiento, color o distorsión.
+
+**¿Cómo funciona el código de aplicación, los shaders y cómo se comunican estos?**
+
+El código en C++ se encarga de enviar datos a los shaders, como el tiempo, la posición del mouse o las texturas. El vertex shader usa esa información para mover los vértices de la malla, y el fragment shader decide el color de cada píxel. Todo se comunica por medio de uniforms que son variables que vienen del programa, varyings que es lo que pasa del vertex al fragment shader y atributos que son datos propios de cada vértice como posición o color.
+
+
+
+
+
 
 
 
