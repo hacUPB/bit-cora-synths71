@@ -64,6 +64,31 @@ Un uniform es una variable especial que se declara dentro de un shader, así com
 
 El código en C++ se encarga de enviar datos a los shaders, como el tiempo, la posición del mouse o las texturas. El vertex shader usa esa información para mover los vértices de la malla, y el fragment shader decide el color de cada píxel. Todo se comunica por medio de uniforms que son variables que vienen del programa, varyings que es lo que pasa del vertex al fragment shader y atributos que son datos propios de cada vértice como posición o color.
 
+# Actividad 4:
+
+Para esta actividad podesmo usar el ejemplo 3 de las lista de ejemplos, es decir, 03_simpleShaderInteraction.
+
+Esta ejemplo se ve de la siguiente forma: 
+
+![alt text](<Captura de pantalla 2025-10-28 082101.png>)
+
+Dependiendo de donde pongamos la bola con el mouse, cambia el color de azul a rosado y puede haber morado que es el punto medio
+
+![alt text](<Captura de pantalla 2025-10-28 085930.png>)
+
+**¿Qué hace el código del ejemplo?**
+
+El código crea un plano, que se puede ver como una cuadricula, que cubre toda la pantalla, y luego usa un shader para modificar su apariencia en función de la posición del mouse.
+
+Además de esto el programa calcula la posición del mouse respecto al centro de la ventana, luego envía esa posición como una variable al shader.
+
+También envía un color mezclado entre magenta y azul, dependiendo de la posición horizontal del mouse.
+
+**¿Cómo funciona el código de aplicación, los shaders y cómo se comunican estos?**
+
+
+
+
 
 
 
