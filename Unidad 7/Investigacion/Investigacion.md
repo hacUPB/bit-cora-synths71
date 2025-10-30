@@ -12,7 +12,54 @@ La figura que se usa es el triangulo.
 
 Esto es un programa que recibe como entrada los valores variables generados por el vertex shader e interpolados por el rasterizador, además de esto genera valores de color y profundidad que se dibujan en el framebuffer.
 
-**
+**¿Cómo se le llaman a los grupos de píxeles de un mismo triángulo?**
+
+Fragmentos.
+
+**¿Qué es un fragment shader?**
+
+El shader que decide el color final de cada píxel en pantalla.
+
+**¿Qué es un vertex shader?**
+
+El shader que procesa cada vértice y puede moverlo o transformarlo.
+
+**¿Al proceso de determinar qué pixels del display va a cubrir cada triángulo de una mesh se le llama?**
+
+Rasterización.
+
+**¿Qué es el render pipeline?**
+
+El flujo completo que sigue la GPU para dibujar, se puede organizar en este orden: vértices, triángulos, rasterización, color final.
+
+**¿Hay alguna diferencia entre aplicar un color a una superficie de una mesh o aplicar una textura?**
+
+Si y es que el color es un valor simple para la superficie, por otro lado la Textura es una imagen aplicada sobre el modelo.
+
+**¿Cuál es la diferencia entre una textura y un material?**
+
+La textura es imagen usada como color o patrón, el material son propiedades completas de superficie.
+
+**¿Qué transformaciones se requieren para mover un vértice del 3D world al View Screen?**
+
+Se puede ver en un orden como el siguiente: mover objeto, mover cámara, proyectar, mostrar.
+
+**¿Al proceso de convertir los triángulos en fragmentos se le llama?**
+
+Rasterización
+
+**¿Qué es el framebuffer?**
+
+Un espacio en memoria donde se guarda la imagen final antes de mostrarla en pantalla.
+
+**¿Para qué se usa el Z-buffer o depth buffer en el render pipeline?**
+
+Para saber qué objeto está más cerca de la cámara y evitar que cosas del fondo se dibujen encima de las del frente.
+
+**¿Por qué la GPU debe ser tan rápida y paralela?**
+
+Porque debe procesar millones de vértices y píxeles al tiempo para cada frame, si todo fuera secuencial seria todo muchisimo más lento.
+
 
 # Actividad 2:
 
@@ -85,6 +132,33 @@ Además de esto el programa calcula la posición del mouse respecto al centro de
 También envía un color mezclado entre magenta y azul, dependiendo de la posición horizontal del mouse.
 
 **¿Cómo funciona el código de aplicación, los shaders y cómo se comunican estos?**
+
+En el ejercicio hay 3 cosas que se comunican entre si que son la aplicación, el vertex shader y fragment shader pero como se conectan entre si? podemos verlo de la siguiente manera:
+
+- **Aplicacion:** La aplicación corre en la CPU, se encarga de correr y preparar los datos que van a ir apareciendo como la posición del mouse, color, tiempo y más, también usa funciones como shader.setUniform...() para enviar esos datos a la GPU y son precisamente esas variables las que se llaman uniforms porque mantienen su valor mientras se dibuja un objeto.
+
+- **Vertex Shader:** Esta corre en la GPU, procesa cada vértice del plano y Puede mover o deformar los vértices dependiendo de los uniforms, un ejemplo es que los vértices cercanos al mouse se eleven o cambien de posición.
+
+-**Fragment Shader:** También corre en la GPU, se encarga del color de cada píxel o fragmento en este caso y lo logra al usar los uniforms, por ejemplo mouseColor para cambiar el color de la superficie según la posición del mouse.
+
+Pero en si la comunicación ocurre de la siguiente manera, la CPU le manda información a la GPU con las siguientes lineas:
+
+```cpp
+shader.setUniform1f("mouseRange", 150);
+shader.setUniform2f("mousePos", mx, my);
+shader.setUniform4fv("mouseColor", mouseColor);
+```
+
+Cuando esto ocurre esas variables se reciben así en el shader: 
+
+```cpp
+uniform float mouseRange;
+uniform vec2 mousePos;
+uniform vec4 mouseColor;
+```
+
+
+
 
 
 
